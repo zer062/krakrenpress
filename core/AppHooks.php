@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Core;
 
 
-use Core\Abstracts\Hook;
+use Core\Tentacles\Hook;
 
 class AppHooks {
 

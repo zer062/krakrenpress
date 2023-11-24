@@ -25,7 +25,8 @@ class AppVendors {
 		if ( !is_null( $plugins ) || !empty( $plugins ) ) {
 
 			foreach ( $plugins as $plugin ) {
-				new $plugin();
+				include APP_PLUGINS_PATH . '/' .$plugin;
+//				new $plugin();
 			}
 		}
 

@@ -42,6 +42,6 @@ abstract class Hook {
 	}
 
 	public function handle() {
-		// todo something...
+		// do something...
 	}
 }

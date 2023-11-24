@@ -97,7 +97,9 @@ abstract class Model
 	/**
 	 * @var array
 	 */
-    protected $post_fields = [];
+    protected $post_fields = [
+		'post_status' => 'publish',
+    ];
 
 	/**
 	 * @var int
@@ -113,6 +115,11 @@ abstract class Model
 	 * @var array
 	 */
     public $fields = [];
+
+	/**
+	 * @var array
+	 */
+	public $capabilities = [];
 
 	/**
 	 * Model constructor.
@@ -246,7 +253,10 @@ abstract class Model
 	    }
     }
 
-    public function register_fields_group() {
+	/**
+	 * @return void
+	 */
+	public function register_fields_group() {
 		$this->group = [
 			'key' => $this->slug . '_group_fields',
 			'title' => __( $this->singular_name . ' Fields', APP_DOMAIN ),
@@ -309,6 +319,9 @@ abstract class Model
 	                'query_var' => $this->query_var,
 	                'show_in_nav_menus' => $this->show_in_nav_menus,
 	                'show_ui' => $this->show_ui,
+	                'capability_type' => 'post',
+	                'capabilities' => $this->capabilities,
+	                'meta_cap' => false,
                 )
             );
         });
@@ -322,13 +335,13 @@ abstract class Model
     public function save() {
 
     	if (is_null( $this->ID ) ) {
-    		$this->ID = wp_insert_post( ['post_type' => $this->slug] );
+    		$this->ID = wp_insert_post( array_merge(['post_type' => $this->slug], $this->post_fields ));
 	    } else {
 	        wp_update_post( $this->post );
 	    }
 
     	foreach ( $this->post_fields as $key => $value) {
-    		update_post_meta( $this->post->ID, $key, $value );
+    		update_post_meta( $this->ID, $key, $value );
 	    }
 
     	$this->load_post();
