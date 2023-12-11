@@ -10,7 +10,8 @@ class AppVendors {
 	}
 
 	public function load_vendors() {
-		$vendors = (new \Core\AppSettings)->get_app_setting( 'vendors' );
+		$settings = include ( APP_CONFIG_PATH . '/app.php' );
+		$vendors = $settings[ 'vendors' ];
 
 		if ( !is_null( $vendors ) && !empty( $vendors ) ) {
 			foreach ( $vendors as $vendor ) {
@@ -20,7 +21,8 @@ class AppVendors {
 	}
 
 	protected function load_integrated_plugins() {
-		$plugins = (new \Core\AppSettings)->get_app_setting( 'plugins' );
+		$settings = include ( APP_CONFIG_PATH . '/app.php' );
+		$plugins = $settings[ 'plugins' ];
 
 		if ( !is_null( $plugins ) || !empty( $plugins ) ) {
 

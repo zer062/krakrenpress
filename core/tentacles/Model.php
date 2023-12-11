@@ -333,7 +333,6 @@ abstract class Model
 	 * @return bool
 	 */
     public function save() {
-
     	if (is_null( $this->ID ) ) {
     		$this->ID = wp_insert_post( array_merge(['post_type' => $this->slug], $this->post_fields ));
 	    } else {

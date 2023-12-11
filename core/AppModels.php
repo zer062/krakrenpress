@@ -25,7 +25,8 @@ class AppModels
 	 */
     protected function load_models()
     {
-        $all_models = scandir( (new \Core\AppSettings)->get_app_setting( 'models_path' ) );
+	    $settings = include ( APP_CONFIG_PATH . '/app.php' );
+        $all_models = scandir( $settings[ 'models_path' ] );
 
         foreach ( $all_models as $model ) {
             if ( $model === '.' || $model === '..' ) continue;

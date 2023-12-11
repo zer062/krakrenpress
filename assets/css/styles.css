@@ -1,0 +1,263 @@
+.alab-container {
+	margin: 40px 0;
+}
+
+.alab-warning {
+	width: 100%;
+	text-align: center;
+	border: 1px solid #FFFFFF35;
+	background-color: #FFFFFF15;
+	padding: 20px;
+	border-radius: 15px;
+	color: #fff;
+	font-weight: 500;
+
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.col {
+	flex: 0 1 100%;
+	margin-bottom: 10px;
+	padding: 2px;
+}
+
+.col.c-25 {
+	flex: 0 1 calc(25% - 10px);
+}
+
+.col.c-33 {
+	flex: 0 1 calc(33.33% - 10px);
+}
+
+.col.c-50 {
+	flex: 0 1 calc(50% - 10px);
+}
+
+.col.c-75 {
+	flex: 0 1 calc(75% - 10px);
+}
+
+.col.c-67 {
+	flex: 0 1 calc(67% - 10px);
+}
+
+select {
+	width: 100%;
+}
+
+.modal {
+	max-width: 80% !important;
+	min-height: 825px !important;
+	background-color: var( --e-global-color-253bc0e ) !important;
+}
+
+.modal .form,
+.modal .preview {
+	padding: 20px 0;
+}
+
+.error {
+	color: darkred;
+}
+
+.modal .form h3,
+.modal .preview h3 {
+	font-family: "Poppins", Sans-serif;
+	font-size: 15px;
+	color: var(--typography-section-titles-color,#fff);
+	margin-top: 0;
+	margin-bottom: var(--section-title-spacing,45px);
+	font-weight: 400;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: #fff !important;
+	font-family: "Poppins", Sans-serif;
+}
+
+table, th, td {
+	border: 1px solid #ccc;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+td a {
+	color: #0073e6 !important;
+	text-decoration: none;
+}
+
+td a:hover {
+	text-decoration: underline;
+}
+
+.form-footer {
+	padding: 20px 0;
+}
+
+.btn {
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	border: 1px solid #cecece;
+	border-radius: 10px;
+}
+
+
+input, textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #dedede;
+}
+
+#alab-doc-preview {
+	height: 600px;
+}
+
+#alab-doc-form {
+	background-color: var(--sections-background-color, #FFFFFF15);
+	padding: var(--sections-padding, 16px 30px);
+	border-left: var(--sections-border-left-width,1px) var(--sections-border-type,solid) var(--sections-border-color,#d5d8dc);
+	border-bottom: var(--sections-border-bottom-width,1px) var(--sections-border-type,solid) var(--sections-border-color,#d5d8dc);
+	border-right: var(--sections-border-right-width,1px) var(--sections-border-type,solid) var(--sections-border-color,#d5d8dc);
+	border-top: var(--sections-border-top-width,1px) var(--sections-border-type,solid) var(--sections-border-color,#d5d8dc);
+	border-radius: var(--sections-border-radius, 10px);
+}
+
+#alab-doc-form label {
+	display: block;
+	width: 100%;
+	color: #fff;
+	line-height: 2;
+}
+
+#alab-doc-form input,
+#alab-doc-form select,
+#alab-doc-form textarea {
+	border: 1px solid #FFFFFF35;
+	background-color: #FFFFFF15;
+	font-family: "Poppins", Sans-serif;
+	font-size: 15px;
+	border-radius: 15px;
+	color: #fff;
+}
+
+.alab-btn {
+	padding: 7px 20px !important;
+	margin: 15px 0 !important;
+	font-family: "Poppins", Sans-serif;
+	font-size: 15px !important;
+	font-weight: 600 !important;
+	fill: var( --e-global-color-253bc0e ) !important;
+	color: var( --e-global-color-253bc0e ) !important;
+	background-color: var( --e-global-color-secondary ) !important;
+	border-radius: 10px 10px 10px 10px !important;
+	background: var( --e-global-color-secondary ) !important;
+	text-decoration: none !important;
+	border: 1px solid rgba(255, 255, 255, 0.208) !important;
+}
+
+.alab-btn:hover,
+.alab-btn:focus,
+.alab-btn:active {
+	background-color: var( --e-global-color-secondary );
+	color: var( --e-global-color-253bc0e ) !important;
+	border: 1px solid rgba(255, 255, 255);
+}
+
+.alab-btn:disabled {
+	opacity: 50%;
+}
+
+.alab-btn-cancel {
+	padding: 7px 20px;
+	margin: 15px 0;
+	font-family: "Poppins", Sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	fill: var( --e-global-color-253bc0e );
+	color: #fff !important;
+	border-radius: 10px 10px 10px 10px;
+	text-decoration: none !important;
+	border: 1px solid rgba(255, 255, 255, 0.208);
+}
+
+.alab-btn-cancel:hover {
+	background-color: #fff;
+	color: var( --e-global-color-253bc0e ) !important;
+}
+
+.alab-form-fields {
+	height: 600px;
+	overflow-y: scroll;
+	padding-right: 20px;
+}
+
+.paper {
+	background-color: #fff;
+	height: 730px;
+	padding: 15px;
+	box-shadow:
+		/* The top layer shadow */
+		0 1px 1px rgba(0,0,0,0.15),
+			/* The second layer */
+		0 10px 0 -5px #eee,
+			/* The second layer shadow */
+		0 10px 1px -4px rgba(0,0,0,0.15),
+			/* The third layer */
+		0 20px 0 -10px #eee,
+			/* The third layer shadow */
+		0 20px 1px -9px rgba(0,0,0,0.15);
+	/* Padding for demo purposes */
+}
+
+.alab-loading {
+	width: 32px;
+	-webkit-animation: rotation 2s infinite linear;
+	-moz-animation: rotation 2s infinite linear;
+	-o-animation: rotation 2s infinite linear;
+	animation: rotation 2s infinite linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+}
+
+.alab-loading.white {
+	color: #fff;
+}
+
+@-webkit-keyframes rotation {
+	from {-webkit-transform: rotate(0deg);}
+	to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+	from {-moz-transform: rotate(0deg);}
+	to   {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+	from {-o-transform: rotate(0deg);}
+	to   {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+	from {transform: rotate(0deg);}
+	to   {transform: rotate(359deg);}
+}

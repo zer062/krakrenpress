@@ -24,7 +24,8 @@ class AppHooks {
 	 * load hooks
 	 */
 	protected function load_hooks() {
-		$all_hooks = scandir( (new \Core\AppSettings)->get_app_setting( 'hooks_path' ) );
+		$settings = include ( APP_CONFIG_PATH . '/app.php' );
+		$all_hooks = scandir( $settings[ 'hooks_path' ] );
 
 		foreach ( $all_hooks as $hook ) {
 			if ( $hook === '.' || $hook === '..' ) continue;
@@ -139,7 +140,7 @@ class AppHooks {
 					$hookInstance->params = $params;
 				}
 
-				$hookInstance->handle();
+				return $hookInstance->handle();
 			}, $hook->priority, count($hook->params));
 		}
 

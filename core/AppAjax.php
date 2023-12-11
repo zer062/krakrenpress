@@ -23,7 +23,8 @@ class AppAjax {
 	 * @return void
 	 */
 	protected function load_ajax() {
-		$all_actions = scandir( (new \Core\AppSettings)->get_app_setting( 'ajax_path' ) );
+		$settings = include ( APP_CONFIG_PATH . '/app.php' );
+		$all_actions = scandir( $settings['ajax_path'] );
 
 		foreach ( $all_actions as $ajax ) {
 			if ( $ajax === '.' || $ajax === '..' ) continue;

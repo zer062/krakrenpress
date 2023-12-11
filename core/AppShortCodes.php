@@ -23,7 +23,8 @@ class AppShortCodes {
 	 * Load all shortcodes
 	 */
 	protected function load_shortcodes() {
-		$all_shortcodes = scandir( (new \Core\AppSettings)->get_app_setting( 'shortcodes_path' ) );
+		$settings = include ( APP_CONFIG_PATH . '/app.php' );
+		$all_shortcodes = scandir( $settings[ 'shortcodes_path' ] );
 
 		foreach ( $all_shortcodes as $shortcode ) {
 			if ( $shortcode === '.' || $shortcode === '..' ) continue;

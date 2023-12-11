@@ -25,7 +25,8 @@ class AppJobs
 	 */
     protected function load_jobs()
     {
-        $all_jobs = scandir( (new \Core\AppSettings)->get_app_setting( 'jobs_path' ) );
+	    $settings = include ( APP_CONFIG_PATH . '/app.php' );
+        $all_jobs = scandir( $settings[ 'jobs_path' ] );
 
         foreach ( $all_jobs as $job ) {
             if ( $job === '.' || $job === '..' ) continue;

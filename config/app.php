@@ -52,5 +52,8 @@ return [
 	/**
 	 * Load third party packages
 	 */
-	'vendors' => []
+	'vendors' => [
+		'/Clicksign/ClickSignService.php',
+		'/TCPDF/tcpdf.php',
+	]
 ];

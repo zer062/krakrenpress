@@ -42,10 +42,9 @@ class App
      */
     public function __construct()
     {
-        //add_action( 'wp', [ $this, 'setup_jobs' ] );
-	    //add_action( 'momi_update_members_daily', [ $this, 'update_members_daily' ] );
-	    //add_filter( 'cron_schedules', [ $this, 'add_custom_cron_schedules' ] );
         $this->load_instances();
+
+//		$this->app_settings->generate_settings_page();
     }
 
     /**
@@ -91,34 +90,5 @@ class App
     public function __get( $name )
     {
         return $this->$name;
-    }
-
-    public function setup_jobs() {
-
-    	add_action( 'momi_update_members_daily', [ $this, 'momi_update_members_daily' ] );
-    	add_action( 'momi_update_members_each_three_hours', [ $this, 'update_members_each_three_hours' ] );
-
-    	if ( !wp_next_scheduled(  'momi_update_members_daily' ) ) {
-		    wp_schedule_event( time(), 'daily', 'momi_update_members_daily' );
-		    wp_schedule_event( time(), 'each_three_hours', 'update_members_daily' );
-	    }
-    }
-
-    public function update_members_daily() {
-	    (new UpdateMembersDaily())->exec();
-    }
-
-	/**
-	 * @param $schedules
-	 *
-	 * @return mixed
-	 */
-    public  function add_custom_cron_schedules( $schedules ) {
-
-	    $schedules['each_three_hours'] = array(
-		    'interval' => 10800,
-		    'display'  => esc_html__( 'Every Three Hours' ), );
-
-	    return $schedules;
     }
 }

@@ -1,0 +1,163 @@
+{
+    "key": "group_655f57efcd713",
+    "title": "Documento",
+    "fields": [
+        {
+            "key": "field_655f57efcd04d",
+            "label": "Corpo do Documento",
+            "name": "documento_corpo",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_656001e7543e0",
+            "label": "Formulário do Documento",
+            "name": "formulario",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Adicionar linha",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65600202543e1",
+                    "label": "Nome",
+                    "name": "nome",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Nome do campo exibido no formulário",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_656001e7543e0"
+                },
+                {
+                    "key": "field_65600220543e2",
+                    "label": "Identificador",
+                    "name": "identificador",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Variável para o documento. Use letras minúsculas, não pode conter espaços e caractéres especiais.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_656001e7543e0"
+                },
+                {
+                    "key": "field_6560068bde2d6",
+                    "label": "Tipo de Campos",
+                    "name": "tipo",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "text": "Texto simples",
+                        "textarea": "Área de texto",
+                        "email": "Email"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_656001e7543e0"
+                }
+            ]
+        },
+        {
+            "key": "field_655f68a14d625",
+            "label": "Esse Documento será exibido para os seguintes clientes",
+            "name": "document_customers",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": [
+                "customer",
+                "subscriber"
+            ],
+            "return_format": "array",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "alabdocument"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1702268380
+}
