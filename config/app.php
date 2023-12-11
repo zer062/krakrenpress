@@ -45,9 +45,7 @@ return [
 	 * Load all integrated plugins
 	 * You can integrate third party plugins. Just add the main file in integrated_plugins map.
 	 */
-	'plugins' => [
-		'acf/acf.php'
-	],
+	'plugins' => [],
 
 	/**
 	 * Load third party packages
